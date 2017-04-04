@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'awesome_print', require: 'ap'
 gem 'mechanize'
+gem 'delayed_job_active_record'
 
 group :development, :test do
   gem 'byebug'
