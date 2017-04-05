@@ -13,8 +13,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'awesome_print', require: 'ap'
-gem 'mechanize'
 gem 'delayed_job_active_record'
+gem "watir-rails"
+gem 'poltergeist'
+gem 'phantomjs', :require => 'phantomjs/poltergeist'
 
 group :development, :test do
   gem 'byebug'
