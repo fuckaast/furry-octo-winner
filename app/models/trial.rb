@@ -12,8 +12,8 @@ class Trial < ActiveRecord::Base
 			puts "Failed for #{pass}"
 			Trial.create(password:pass)
 		else
-			puts "Successful for #{i}"
 			Trial.create(password:pass, successful:true)
+			puts "Successful for #{pass}"
 		end
 	rescue => e
 	end
